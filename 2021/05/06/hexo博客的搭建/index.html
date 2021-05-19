@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://chenxd-a.github.io/2021/05/06/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/test5.jpg">
 <meta property="og:image" content="http://chenxd-a.github.io/2021/05/06/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/test6.jpg">
 <meta property="article:published_time" content="2021-05-06T09:33:22.000Z">
-<meta property="article:modified_time" content="2021-05-14T02:16:55.553Z">
+<meta property="article:modified_time" content="2021-05-19T20:38:13.593Z">
 <meta property="article:author" content="ChenXD">
 <meta property="article:tag" content="个人技术">
 <meta name="twitter:card" content="summary">
@@ -67,7 +67,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -77,8 +77,6 @@
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
             
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -135,7 +133,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -176,7 +174,7 @@
 <span id="more"></span>
 
 <p>首先我们需要准备两个工具一个是Git，一个是Nodejs</p>
-<p>Git是一个开源的分布式版本控制系统，简单来说就是一个管理代码的仓库，结合Github可以轻松管理自己写的代码，极大减少了代码丢失的风险。</p>
+<p>Git是一个开源的分布式版本控制软件，简单来说就是一个管理代码的仓库，结合Github可以轻松管理自己写的代码的一个网站，极大减少了代码丢失的风险。</p>
 <p>Git安装完成之后首次进入Git Bash Here，需要设置用户名和邮箱，这个用户名和邮箱是可以随便设置的（不提倡，最好是设置自己记得住的），简单介绍一下为什么要设置用户名和邮箱，这里还要提到两种协议：SSH和HTTPS，SSH协议只认机器，也就是使用公钥私钥来做权限的认证，而HTTPS协议是需要使用账户和密码来做权限的认证，因为我们是这个项目的所有者所以我们使用自己的电脑工作时（应该没人会用公司的电脑来做自己的个人博客吧），因为处理人也只有我们自己所以我们SSH协议对于我们自己来说上传仓库会简单一些，只要密钥输入一次就好了，之后每次上传的时候就不用再次输密钥了，但是用HTTP协议的就需要每次都输入账户和密码，来让仓库判断是本人上传的。</p>
 <pre><code>git config --global user.name &quot;Your Name&quot; 配置用户名
 
@@ -378,8 +376,18 @@ git config user.email  查看邮箱
     <div id="footer-info">
     	<div class="footer-left">
     		&copy; 2021 ChenXD
-			<span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-			<span id="busuanzi_container_site_uv">  本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
+			
+			
+				<!-- 不蒜子统计 -->
+				<span id="busuanzi_container_site_pv">
+						本站总访问量<span id="busuanzi_value_site_pv"></span>次
+				</span>
+				<span class="post-meta-divider">|</span>
+				<span id="busuanzi_container_site_uv" style='display:none'>
+						本站访客数<span id="busuanzi_value_site_uv"></span>人
+				</span>
+				<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+			
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -423,8 +431,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
-      
-      
     
       
       
@@ -436,15 +442,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -507,38 +511,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
