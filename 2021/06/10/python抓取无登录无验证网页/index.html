@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://chenxd-a.github.io">
-  <title>Archives | ChenXDBlog</title>
+  <title>python抓取无登录无验证网页 | ChenXDBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="建站 Python JAVA 编程语言">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ChenXDBlog">
-<meta property="og:url" content="http://chenxd-a.github.io/archives/index.html">
+  <meta name="description" content="使用requests工具库可以轻松实现抓取 首先先安装requests工具库，直接命令提示符安装 pip install requests  在安装转换语言的bs4库 pip install bs4  在安装解析器lxml，优势是解析速度快 pip install lxml  在安装beautifulsoup4网页信息提取库，以提取HTML网页信息 pip install beautifulsou">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python抓取无登录无验证网页">
+<meta property="og:url" content="http://chenxd-a.github.io/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/index.html">
 <meta property="og:site_name" content="ChenXDBlog">
-<meta property="og:description" content="建站 Python JAVA 编程语言">
+<meta property="og:description" content="使用requests工具库可以轻松实现抓取 首先先安装requests工具库，直接命令提示符安装 pip install requests  在安装转换语言的bs4库 pip install bs4  在安装解析器lxml，优势是解析速度快 pip install lxml  在安装beautifulsoup4网页信息提取库，以提取HTML网页信息 pip install beautifulsou">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-10T11:15:30.000Z">
+<meta property="article:modified_time" content="2021-06-10T12:26:26.505Z">
 <meta property="article:author" content="ChenXD">
 <meta property="article:tag" content="个人技术">
 <meta name="twitter:card" content="summary">
@@ -139,130 +141,186 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-python抓取无登录无验证网页" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      python抓取无登录无验证网页
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/" class="archive-article-date">
+
+        
+        <a href="/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/" class="archive-article-date">
   	<time datetime="2021-06-10T11:15:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/">python抓取无登录无验证网页</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用requests工具库可以轻松实现抓取</p>
+<p>首先先安装requests工具库，直接命令提示符安装</p>
+<pre><code>pip install requests
+</code></pre>
+<p>在安装转换语言的bs4库</p>
+<pre><code>pip install bs4
+</code></pre>
+<p>在安装解析器lxml，优势是解析速度快</p>
+<pre><code>pip install lxml
+</code></pre>
+<p>在安装beautifulsoup4网页信息提取库，以提取HTML网页信息</p>
+<pre><code>pip install beautifulsoup4
+</code></pre>
+<p>首先先写开头，把各种安装好的库放入程序中</p>
+<pre><code>import requests
+from bs4 import BeautifulSoup
+</code></pre>
+<p>这里我们抓取的网页以笔趣阁为例，我们抓取他们的小说，当然我们是学习用的，不要把它用在其他商用的地方</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://chenxd-a.github.io/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%882%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-05-11T13:03:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%882%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo博客拓展（2）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%882%EF%BC%89/">hexo博客拓展（2）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%881%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-05-10T19:02:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-11</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%881%EF%BC%89/">hexo博客拓展（1）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/05/06/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2021-05-06T09:33:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/05/06/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/">hexo博客的搭建</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -299,8 +357,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
