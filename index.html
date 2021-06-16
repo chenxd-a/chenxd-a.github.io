@@ -165,50 +165,9 @@
 <p>首先先安装requests工具库，直接命令提示符安装</p>
 <pre><code>pip install requests
 </code></pre>
-<p>在安装转换语言的bs4库</p>
-<pre><code>pip install bs4
-</code></pre>
-<p>在安装解析器lxml，优势是解析速度快</p>
-<pre><code>pip install lxml
-</code></pre>
-<p>在安装beautifulsoup4网页信息提取库，以提取HTML网页信息</p>
-<pre><code>pip install beautifulsoup4
-</code></pre>
-<p>首先先写开头，把各种安装好的库放入程序中</p>
-<pre><code>1 import requests
-2 from bs4 import BeautifulSoup
-</code></pre>
-<p>这里我们抓取的网页以笔趣阁为例，我们抓取他们的小说，当然我们是学习用的，不要把它用在其他商用的地方</p>
-<p>网址是’<a target="_blank" rel="noopener" href="https://www.xbiquge.la/&#39;%EF%BC%8C%E5%BD%93%E7%84%B6%E6%88%91%E4%BB%AC%E4%B8%8D%E8%83%BD%E4%BB%8E%E8%BF%99%E4%B8%AA%E7%BD%91%E5%9D%80%E7%9B%B4%E6%8E%A5%E8%BF%9B%E8%A1%8C%E7%88%AC%E5%8F%96%EF%BC%8C%E6%88%91%E4%BB%AC%E5%B0%B1%E4%BB%A5%E4%B8%80%E6%9C%AC%E5%B0%8F%E8%AF%B4%E4%B8%BA%E4%BE%8B%EF%BC%8C%E6%88%91%E5%B0%B1%E9%9A%8F%E4%BE%BF%E6%8C%91%E4%BA%86%E4%B8%80%E6%9C%AC&#39;https://www.xbiquge.la/80/80055/&#39;">https://www.xbiquge.la/&#39;，当然我们不能从这个网址直接进行爬取，我们就以一本小说为例，我就随便挑了一本&#39;https://www.xbiquge.la/80/80055/&#39;</a></p>
-<p>首先我们按键盘上的F12调出开发者模式，然后如下图所示</p>
-<img src="/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/gif1.gif" class>
-
-<p>找到定位之后我们要找关键字，在这个网页中明确的是</p>
-
-
-<p>找到了之后，我们要先get这个网页，然后进行代码转换，然后使用解析器解析获取的代码，形成我们能看懂的HTML代码，再是定位</p>
-<pre><code>3 r = requests.get(&#39;https://www.xbiquge.la/80/80055/&#39;)
-4 source = r.content#防止中文乱码
-5 soup = BeautifulSoup(source,&#39;lxml&#39;) #lxml HTML 解析器优点是速度快
-6 soup_new = soup.find(&#39;div&#39;,id=&#39;list&#39;) #定位内容所在区域
-</code></pre>
-<p>然后我们再看章节所在的路径是什么结构，由网页源码看出是没有其他转换的，就是普通的路径访问，所以我们只要循环获取它的每章节的路径就好了</p>
-<pre><code>7 for zhangjjie in soup_new.find_all(&#39;a&#39;):
-8 print(zhangjjie.attrs[&#39;href&#39;])
-</code></pre>
-<p>这里的路径不是完全的，我们还要通过拼接得到全部的路径名才能获取小说的内容，通过点击章节名访问到的章节名全称就是’<a target="_blank" rel="noopener" href="https://www.xbiquge.la/80/80055/31224549.html">https://www.xbiquge.la/80/80055/31224549.html</a></p>
-<p>而我们获得的路径是/80/80055/31224549.html，也就是说我们只要把网址头拼接上去就好了<a target="_blank" rel="noopener" href="https://www.xbiquge.la/">https://www.xbiquge.la</a></p>
-<pre><code>9 zhangjielink = f&quot;https://www.xbiquge.la&#123;zhangjjie.attrs[&#39;href&#39;]&#125;&quot;
-</code></pre>
-<p>这样我们就能得到全部章节的路径，然后再去章节中找到我们要获取的小说主体，所以我们要继续获取所得链接中章节主体所在的位置</p>
-<pre><code>10 r2 = requests.get(zhangjielink,headers)#访问每个章节的网址
-11 source2 = r2.content#防止中文乱码
-12 soup2 = BeautifulSoup(source2,&#39;lxml&#39;) #lxml HTML 解析器优点是速度快
-13 soup_new2 = soup2.find(&#39;div&#39;, id=&#39;content&#39;)
-14 fa.write(f&quot;&#123;soup_new2&#125;\n&quot;)
-</code></pre>
-<p>这样我们就能获取到一整篇小说的全部内容了，当然还可以通过导入text文件进行修改和排版这里我就不在赘述了。</p>
-
+        
+          <a class="article-more-a" href="/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/#more">more >></a>
+        
       
 
       
