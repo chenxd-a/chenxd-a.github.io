@@ -6,18 +6,44 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://chenxd-a.github.io">
-  <title>ChenXDBlog</title>
+  <title>springboot+maven使用安装手册和下载 | ChenXDBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="建站 Python JAVA 编程语言">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ChenXDBlog">
-<meta property="og:url" content="http://chenxd-a.github.io/index.html">
+  <meta name="description" content="今天我们来讲maven+SpringBoot 首先我们就从一个所有代码的项目始祖开始，打印出一个HEllO World 环境约束：Intellij IDEA 2021.1.2、maven 3.8.1、jdk 1.8.*、SpringBoot 2.4.0.RElEASE以下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot+maven使用安装手册和下载">
+<meta property="og:url" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/index.html">
 <meta property="og:site_name" content="ChenXDBlog">
-<meta property="og:description" content="建站 Python JAVA 编程语言">
+<meta property="og:description" content="今天我们来讲maven+SpringBoot 首先我们就从一个所有代码的项目始祖开始，打印出一个HEllO World 环境约束：Intellij IDEA 2021.1.2、maven 3.8.1、jdk 1.8.*、SpringBoot 2.4.0.RElEASE以下">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test1.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test2.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test3.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test4.png">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test5.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test6.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test7.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test8.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test9.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/10.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/11.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/12.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/13.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/14.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/15.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/16.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/17.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/18.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/19.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/20.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/21.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/23.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/24.jpg">
+<meta property="article:published_time" content="2021-06-21T16:48:46.000Z">
+<meta property="article:modified_time" content="2021-06-21T18:52:43.240Z">
 <meta property="article:author" content="ChenXD">
 <meta property="article:tag" content="个人技术">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="ChenXDBlog" type="application/atom+xml">
   
@@ -139,16 +165,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-springboot-maven使用安装手册和下载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-springboot-maven使用安装手册和下载" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/">springboot+maven使用安装手册和下载</a>
+    <h1 class="article-title" itemprop="name">
+      springboot+maven使用安装手册和下载
     </h1>
   
 
@@ -164,79 +188,214 @@
         <p>今天我们来讲maven+SpringBoot</p>
 <p>首先我们就从一个所有代码的项目始祖开始，打印出一个HEllO World</p>
 <p>环境约束：Intellij IDEA 2021.1.2、maven 3.8.1、jdk 1.8.*、SpringBoot 2.4.0.RElEASE以下</p>
-        
-          <a class="article-more-a" href="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/#more">more >></a>
-        
-      
+<span id="more"></span>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<p>首先先安装jdk，写JAVA这个一定是少不了的，不会安装的查看以下百度，maven也是一样就下载最新版本就好了，然后把maven解压到一个自己记得住的地方，我是新建了一个文件夹专门放这个maven</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test1.jpg" class>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/">展开全文 >></a>
-        </p>
-      
+<p>然后我们设置一下maven的setting.xml，主要是要告诉maven用jdk那个版本来进行编译，还有load修改成阿里云的仓库路径，让他的下载速度变快，路径如下图所示</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test2.jpg" class>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python抓取无登录无验证网页" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/">python抓取无登录无验证网页</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/" class="archive-article-date">
-  	<time datetime="2021-06-10T11:15:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用requests工具库可以轻松实现抓取</p>
-<p>首先先安装requests工具库，直接命令提示符安装</p>
-<pre><code>pip install requests
+<p>打开文件后我们找到mirrors这个标签，然后把下面串代码放进去</p>
+<pre><code>&lt;mirror&gt;
+  &lt;id&gt;central&lt;/id&gt;#id是唯一标识一个mirror
+  &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; #匹配所有仓库请求，即将所有的仓库请求都转到该镜像上
+  &lt;name&gt;aliyun central&lt;/name&gt;#就是一个描述名称可以随便写，最好是写有标志性的
+  &lt;url&gt;
+    https://maven.aliyun.com/repository/central
+  &lt;/url&gt;#这个是官方的库地址
+&lt;/mirror&gt;
 </code></pre>
-        
-          <a class="article-more-a" href="/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/#more">more >></a>
-        
+<p>就像下图所示</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test3.jpg" class>
+
+<pre><code>https://maven.aliyun.com/mvn/guide
+</code></pre>
+<p>这个是阿里云的仓库地址，在这里面可以查到最新的库地址，不要老是都是什么<url><a target="_blank" rel="noopener" href="http://maven.aliyun.com/nexus/content/groups/public/">http://maven.aliyun.com/nexus/content/groups/public/</a></url>了（我看很多回答Maven镜像仓库地址都是这个地址），这个阿里官方都不怎么用了，要用我们就用最新的，过程图我也放下面了</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test4.png" class>
+
+<p>把上边的代码复制上去之后，我们在这个标签下一行就能找到我们要设置jdk代码的profiles标签，在里面我们把下面的代码复制上</p>
+<pre><code>&lt;profile&gt;#设置jdk版本
+  &lt;id&gt;jdk-1.8&lt;/id&gt;
+  &lt;activation&gt;
+    &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+    &lt;jdk&gt;1.8&lt;/jdk&gt;
+  &lt;/activation&gt;
+  &lt;properties&gt;
+    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;
+    &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;
+  &lt;/properties&gt;
+  &lt;repository&gt;#代理仓库阿里云spring仓库的镜像地址
+    &lt;id&gt;spring&lt;/id&gt;
+    &lt;url&gt;
+      https://maven.aliyun.com/repository/spring
+    &lt;/url&gt;
+    &lt;releases&gt;
+      &lt;enabled&gt;true&lt;/enabled&gt;
+    &lt;/releases&gt;
+    &lt;snapshots&gt;
+      &lt;enabled&gt;true&lt;/enabled&gt;
+    &lt;/snapshots&gt;
+  &lt;/repository&gt;
+&lt;/profile&gt;
+</code></pre>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test5.jpg" class>
+
+<p>setting.xml文件就设置完毕了，然后我们就是设置IDEA，让整合我们下载下来的MAVEN，要不然IDEA还是用的自带的MAVEN</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test6.jpg" class>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test7.jpg" class>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test8.jpg" class>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/test9.jpg" class>
+
+<p>后两张图片的设置是因为最新版本的IDEA不跳转自动更新maven了，所以我们需要手动设置一下自动更新</p>
+<p>至此我们的设置是完毕了，让我们来新建一个项目正式开始我们的HelloWorld之路吧！</p>
+<p>首先新建一个项目</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/10.jpg" class>
+
+<p>选择Maven工程新建，project SDK选择我们下载安装好的JDK1.8，然后next，添加项目名称之后点击完成</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/11.jpg" class>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/12.jpg" class>
+
+<p>然后我们就生成好了一个maven工程</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/13.jpg" class>
+
+<p>之后我们要导入SpringBoot依赖，因为我们之前设置了镜像地址的路径所以我们不用重新设置路径了，如果你导入依赖失败你就重新设置路径</p>
+<p>导入依赖我们需要从Spring官网获取一串依赖代码，熟悉之后自己打也是没有问题的</p>
+<pre><code>https://spring.io/guides/gs/spring-boot/ #这个就是Spring官网
+</code></pre>
+<p>找到下面这串代码</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/14.jpg" class>
+
+<p>然后复制到pom.xml文件中，当然由于添加的依赖已经有很多版本了，所以我们要加上<version></version>来控制下载的镜像文件版本，避免下载时间过久失败，不想访问的可以直接从这复制代码</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+        xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.test&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-hello&lt;/artifactId&gt;
+
+    #这个version要重新设置，截止至2021-6的时间里还没有超过2.4.0.RElEASE版本的文件
+    &lt;version&gt;2.4.0.RElEASE&lt;/version&gt;
+
+    &lt;properties&gt;
+        &lt;maven.compiler.source&gt;8&lt;/maven.compiler.source&gt;
+        &lt;maven.compiler.target&gt;8&lt;/maven.compiler.target&gt;
+    &lt;/properties&gt;
+    #从这开始
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+            &lt;version&gt;2.3.8.RELEASE&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+            &lt;version&gt;2.3.8.RELEASE&lt;/version&gt;
+            &lt;!--version指定版本下载，避免访问过久失败--&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;2.3.8.RELEASE&lt;/version&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+    #到这结束
+&lt;/project&gt;
+</code></pre>
+<p>以防看不懂，我还是放了张图片在这</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/15.jpg" class>
+
+<p>一般来说现在已经开始下载依赖了，但是以防万一我们还是刷新一下</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/16.jpg" class>
+
+<p>刷新完毕之后我们就等待依赖下载完成，完成之后在这应该能看见Maven文件</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/17.jpg" class>
+
+<p>下一步我们编写一个主程序用来启动SpringBoot</p>
+<p>首先，我们新建一个项目</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/18.jpg" class>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/19.jpg" class>
+
+<p>新建完成之后标注主程序类，用psvm生成main方法</p>
+<pre><code>package com.test;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * @SpringBootApplication标注一个主程序类，说明这是一个Spring Boot应用
+*/
+@SpringBootApplication  //第一步
+public class HelloWorldMainApplication &#123;
+    public static void main(String[] args) &#123;//psvm第二步
+        //Spring应用启动起来
+        SpringApplication.run(HelloWorldMainApplication.class,args); //第三步
+    &#125;
+&#125;
+</code></pre>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/20.jpg" class>
+
+<p>之后是做一个controller类，所以我们在com.test上右键新建一个包名叫controller，在controller包下新建一个Hellocontroller类</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/21.jpg" class>
+
+<pre><code>package com.test.controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller //处理请求
+public class Hellocontroller &#123;
+
+    @ResponseBody //把HelloWorld写给浏览器
+    @RequestMapping(&quot;/hello&quot;)//浏览器访问路径
+    public String Hello()&#123;
+        return &quot;HelloWorld&quot;;
+    &#125;
+&#125;   
+</code></pre>
+
+
+<p>然后在回到main类运行main</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/23.jpg" class>
+
+<p>再在浏览器上访问</p>
+<pre><code>http://localhost:8080/hello
+</code></pre>
+<p>便可以在浏览器上看见HelloWorld了</p>
+<img src="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/24.jpg" class>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -245,16 +404,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://chenxd-a.github.io/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/06/10/python%E6%8A%93%E5%8F%96%E6%97%A0%E7%99%BB%E5%BD%95%E6%97%A0%E9%AA%8C%E8%AF%81%E7%BD%91%E9%A1%B5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python抓取无登录无验证网页</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -269,213 +487,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo博客拓展（2）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%882%EF%BC%89/">hexo博客拓展（2）</a>
-    </h1>
-  
-
-        
-        <a href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%882%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-05-11T13:03:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天我们来讲，hexo框架中图片的插入</p>
-<p>废话不多说，让我们开始吧</p>
-        
-          <a class="article-more-a" href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%882%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%882%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-hexo博客拓展（1）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%881%EF%BC%89/">hexo博客拓展（1）</a>
-    </h1>
   
 
-        
-        <a href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%881%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-05-10T19:02:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上一篇我们讲完了博客的搭建，这一章我们来讲一讲这个hexo框架的拓展，发布文章和让它变得更加漂亮</p>
-<p>在这一章我们要讲一个主题叫yilia，是一个大神做的发布在GitHub上的一个好看的主题，当然也可以选择其他的自己认为更好看的，或者自己尝试做一个主题都可以</p>
-<p>首先，我们在上一章中新建好的blog,然后在里面右键单击在快捷菜单中选择Git Bash Here，打开命令提示符窗口</p>
-        
-          <a class="article-more-a" href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%881%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/11/hexo%E5%8D%9A%E5%AE%A2%E6%8B%93%E5%B1%95%EF%BC%881%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo博客的搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/06/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/">hexo博客的搭建</a>
-    </h1>
   
 
-        
-        <a href="/2021/05/06/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2021-05-06T09:33:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>hexo博客是一种目前最流行的的博客搭建框架</p>
-<p>可以非常快速的搭建出一个个人博客网站，当然还有很多其他的方法搭建，我在这里就只介绍自己知道的</p>
-<p>废话不多说，我们开始搭建吧</p>
-        
-          <a class="article-more-a" href="/2021/05/06/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/06/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -512,8 +549,8 @@
       <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
