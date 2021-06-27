@@ -22,8 +22,16 @@
 <meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test5.jpg">
 <meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test6.jpg">
 <meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test7.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test8.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test9.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test10.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test11.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test12.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test13.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test14.jpg">
+<meta property="og:image" content="http://chenxd-a.github.io/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test15.jpg">
 <meta property="article:published_time" content="2021-06-22T15:02:28.000Z">
-<meta property="article:modified_time" content="2021-06-22T16:13:05.626Z">
+<meta property="article:modified_time" content="2021-06-23T08:49:25.687Z">
 <meta property="article:author" content="ChenXD">
 <meta property="article:tag" content="个人技术">
 <meta name="twitter:card" content="summary">
@@ -201,6 +209,50 @@
 <img src="/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test7.jpg" class>
 
 <p>只要不关闭命令提示符窗口，它就会一直运行，你就可以一直访问到，要是要退出的话就按两次Ctrl+C，就可以退出了</p>
+<h3 id="2、快速搭建HelloWorld启动项目"><a href="#2、快速搭建HelloWorld启动项目" class="headerlink" title="2、快速搭建HelloWorld启动项目"></a>2、快速搭建HelloWorld启动项目</h3><p>上一篇文章写的搭建方式是比较传统的搭建方式</p>
+<p>这里我们拓展一下比较轻松的快速搭建一个Spring Boot的web应用，和之前是一样的代码但是这回我们用到的不是Maven开始搭建，我们用到的是Spring lnitializr进行快速搭建Spring Boot项目，这个是Spring官方给我们搭好的一个快速创建的应用，省略了之前我们还要去复制这串依赖的过程，项目搭建好了，这串依赖自然就出现在pom.xml文件中了</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.3.8.RELEASE&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">        &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;version&gt;2.3.8.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;!--version指定版本下载，避免访问过久失败--&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br><span class="line">&lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.3.8.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">    &lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure>
+
+<p>下面我们开始吧，我们首先新建一个项目，跟之前一样file–&gt;New–&gt;project，在出现的New project窗口中我们选择Spring lnitializr，如下图所示配置</p>
+<img src="/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test8.jpg" class>
+
+<p>填完之后下一步，我们因为是建立一个web项目所以我们直接选择Web下的Spring Web，当然之后项目多了，需要的依赖也多了，你也可以导入多个项目依赖</p>
+<img src="/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test9.jpg" class>
+
+<p>然后我们就新建好了一个项目，我们打开pom.xml文件看一下</p>
+<img src="/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test10.jpg" class>
+
+<p>就能发现我们之前从官网上复制的依赖代码自动就生成了，不需要我们自己再去复制一遍这么麻烦了，而且我们的Maven也在自动帮我们开始下载依赖，如果没有自动下载，在Maven Project窗口刷新一遍就好了</p>
+<p>看一下项目中的文件夹，甚至连main方法也帮我们创建好了，这样我们就只要专心的写里面的配置就好了</p>
+<img src="/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test11.jpg" class>
+
+<p>所以我们就和之前一样，新建一个类用来放HelloWorld，这里我就不再赘述了，在这里我们讲一个新的标识</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">把这两个<span class="meta">@Controller</span>、<span class="meta">@ResponseBody</span>标识整合起来的一个新的标识</span><br><span class="line">    <span class="meta">@RestController</span>这个是spring <span class="number">4.2</span>以上新加的一个标识，就是整合了这两个<span class="meta">@Controller</span>、<span class="meta">@ResponseBody</span>标识，用起来跟轻松</span><br></pre></td></tr></table></figure>
+
+<img src="/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test12.jpg" class>
+
+<p>然后运行就和上一篇的访问是一致的</p>
+<img src="/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test13.jpg" class>
+
+<h4 id="Spring-lnitializr生成拓展"><a href="#Spring-lnitializr生成拓展" class="headerlink" title="Spring lnitializr生成拓展"></a>Spring lnitializr生成拓展</h4><p>我们在来简单讲一下Spring lnitializr生成后，自动生成的文件的使用</p>
+<p>我们可以对比一下我们之前生成的两个项目中的文件内容，发现用Spring lnitializr生成的main文件夹下的resorces文件夹目录下多了几个文件</p>
+<img src="/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test14.jpg" class><img src="/2021/06/22/HelloWorld%E6%8B%93%E5%B1%95/test15.jpg" class>
+
+<p>这几个文件是用来</p>
+<ul>
+<li><p>static：是用来保存所有的静态资源，如：js、css、image等文件</p>
+</li>
+<li><p>template：保存所有的模板（Spring Boot默认jar包使用嵌入式的Tomcat，默认不支持JSP页面）；可以使用模板引擎（freemarker、thymeleaf）</p>
+</li>
+<li><p>application.properties：Spring Boot应用的配置文件（可以用来修改Spring Boot自动配置的默认值，如：修改地址端口号server.port=8081，这样访问的时候我们就不是：8080了，要用8081端口了）</p>
+</li>
+</ul>
+
+
+
+
+
+
 
       
 
@@ -294,6 +346,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2021/06/28/SpringBoot%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SpringBoot配置文件
+        
+      </div>
+    </a>
+  
   
     <a href="/2021/06/22/springboot-maven%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E5%92%8C%E4%B8%8B%E8%BD%BD/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">springboot+maven使用安装手册和下载</div>
@@ -323,7 +384,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%A6%82%E4%BD%95%E6%8A%8A%E4%B8%80%E4%B8%AAspringboot%E6%89%93%E5%8C%85%E6%88%90Jar%E6%96%87%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">1、如何把一个springboot打包成Jar文件</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%A6%82%E4%BD%95%E6%8A%8A%E4%B8%80%E4%B8%AAspringboot%E6%89%93%E5%8C%85%E6%88%90Jar%E6%96%87%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">1、如何把一个springboot打包成Jar文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAHelloWorld%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.1.</span> <span class="toc-text">2、快速搭建HelloWorld启动项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-lnitializr%E7%94%9F%E6%88%90%E6%8B%93%E5%B1%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">Spring lnitializr生成拓展</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
